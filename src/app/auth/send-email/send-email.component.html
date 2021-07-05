@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <div class="row justify-content-md-center mt-4">
+        <div class="col-md-6 col-xs-12">
+            <div class="card">
+                <div class="card-header text-center">
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i> Reenviar e-mail verificação
+                </div>
+                <div *ngIf="(user| async); then body; else loading"></div>
+
+                <ng-template #body>
+                    <div class="card-body">
+                        <p class="text-center">Reenviar e-mail de verificação no seu e-mail
+                            <strong>{{ (user| async)?.email }}</strong>
+                        </p>
+                        <p class="text-center">Por favor check sua caixa de e-mail e click no link contido no email de
+                            vificação
+                        </p>
+                        <button type="button" class="btn btn-primary btn-block" (click)="sendEmailVerification()"><i
+                                class="fa fa-paper-plane" aria-hidden="true"></i> reenviar e-mail verificação</button>
+                    </div>
+                </ng-template>
+
+                <ng-template #loading>
+                    <div class="card-body">
+                        <p class="text-center"><i class="fa fa-spinner" aria-hidden="true"></i> Carregando .......</p>
+                    </div>
+                </ng-template>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "crud-angular-e6183": {
+      "hosting": {
+        "AgendaSalao": [
+          "crud-angular-e6183"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "crud-angular-e6183"
+  }
+}

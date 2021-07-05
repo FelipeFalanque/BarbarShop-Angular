@@ -1,0 +1,70 @@
+<div class="container-fluid">
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-4 col-xs-12">
+            <div class="card">
+                <div class="card-header bg-dark text-white text-center">
+                    <i class="fa fa-user-plus" aria-hidden="true"></i> REGISTER
+                </div>
+                <div class="card-body">
+
+                    <div class="row justify-content-center">
+                        <div class="col-4">
+                            <label class="font-weight-light text-muted">DDD</label>
+                        </div>
+                        <div class="col-8">
+                            <label class="font-weight-light text-muted">Celular</label>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-4">
+                            <input type="text" [(ngModel)]="phoneNumber.area" class="form-control" placeholder="ex.: 19"
+                                maxlength="2">
+                        </div>
+                        <div class="col-8">
+                            <input type="text" [(ngModel)]="phoneNumber.phone" class="form-control"
+                                placeholder="ex.: 999998888" maxlength="9">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="row justify-content-center mt-2">
+                <div class="col-12 text-center">
+                    <div id="recaptcha-container"></div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mt-2">
+                <div class="col-12">
+                    <button class="btn btn-primary btn-block"class="btn btn-primary btn-block" (click)="sendLoginCode()"><i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                        Enviar</button>
+                </div>
+            </div>
+
+            <div class="card mt-2">
+                <div class="card-body">
+
+                    <div *ngIf="windowRef.confirmationResult" class="row justify-content-center">
+                        <div class="col-12">
+                            <label class="font-weight-light text-muted">Código de verificação</label>
+                        </div>
+                        <div class="col-md-8 col-xs-12 mb-2">
+                            <input type="text" name="code" class="form-control" [(ngModel)]="verificationCode">
+                        </div>
+                        <div class="col-md-4 col-xs-12">
+                            <button class="btn btn-success btn-block" (click)="verifyLoginCode()">Verificar</button>
+                        </div>
+                    </div>
+
+                    <div class="mt-2" *ngIf="error">
+                        <p class="form-text text-danger small">{{error}}</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
